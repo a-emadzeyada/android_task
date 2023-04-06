@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
     private var currencyCodeList = ArrayList<String>()
     private var currencyValueList = ArrayList<Double>()
     private var isTrue = false
-    private var lastPos = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,7 +77,7 @@ class MainActivity : AppCompatActivity() {
                         init()
                     } else {
                         if (!state.message.isNullOrEmpty())
-                            showToast(state.message ?: "Not Found!!")
+                            showToast(state.message )
                     }
                 }
             }
