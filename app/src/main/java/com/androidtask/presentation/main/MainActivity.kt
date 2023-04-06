@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             } else {
                 viewModel.getRates("AED")
             }
-        }else {
+        } else {
             viewModel.getRates("AED")
         }
     }
@@ -77,7 +77,8 @@ class MainActivity : AppCompatActivity() {
                         SharedPreferencesUtils.saveObject("RATES", state.data)
                         init()
                     } else {
-                        showToast(state.message ?: "Not Found!!")
+                        if (!state.message.isNullOrEmpty())
+                            showToast(state.message ?: "Not Found!!")
                     }
                 }
             }
